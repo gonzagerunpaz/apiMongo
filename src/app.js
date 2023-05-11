@@ -1,8 +1,9 @@
 const express = require('express')
+const { alumnosRouter } = require('./routes/alumnos.route')
 const PORT = process.env.PORT || 3000
 const app = express()
 
 app.use(express.json())
-app.get("/api/alumnos", ( req, res )=>{ res.status(200).json({mensaje: 'Hola mundo!'})}  )
+app.use('/api/alumnos', alumnosRouter  )
 
 app.listen(PORT, ()=>{ console.log(`Ready on port ${PORT}`)})
