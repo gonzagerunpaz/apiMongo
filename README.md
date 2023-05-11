@@ -22,4 +22,4 @@ Esta app utiliza la siguiente librerias
 
 * nodemon (dev)
 * express 
-* mongosse 
+* mongoose 
