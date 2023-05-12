@@ -16,5 +16,33 @@ const saveAlumno = async (req, res) => {
     }
 }
 
+const getAlumnoByDni = async (req, res) => {
+    try {
+        const alumno = await alumnosService.getAlumnoByDni(req.params.dni)
+        if (alumno)
+            res.status(200).json(alumno )
+        else
+            res.status(404).json({mensaje: `${req.params.dni} no se encuentra registrado`})
+    } catch (err ) {
+        res.status(500).json(err)
+    }            
+}
 
-module.exports = { getAlumnosController: getAlumnos, saveAlumnoController: saveAlumno}
+const deleteAlumnoByDni = async (req, res) => {
+    try {
+        res.status(200).json({
+            mensaje:`${req.params.dni} fue borrado con exito`, 
+            alumno: await alumnosService.deleteAlumnoByDni(req.params.dni)
+        })
+    } catch (err) {
+        res.status(500).json(err) 
+    }
+}
+
+
+module.exports = { 
+    getAlumnosController: getAlumnos, 
+    saveAlumnoController: saveAlumno, 
+    getAlumnoByDniController: getAlumnoByDni,
+    deleteAlumnoByDniController: deleteAlumnoByDni
+}

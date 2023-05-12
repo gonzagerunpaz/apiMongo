@@ -9,4 +9,13 @@ const save = async (alumnoData) => {
     return await alumno.save()
 } 
 
-module.exports = {findAll, save }
+const getAlumnoByDni = async (dniValue) =>{
+    return await Alumno.findOne( {dni:dniValue})
+}
+
+const deleteAlumnoByDni = async (dniValue) => {
+    return await Alumno.deleteOne({dni:dniValue})
+}
+
+
+module.exports = {findAll, save, getAlumnoByDni, deleteAlumnoByDni }
