@@ -7,6 +7,12 @@ docker run -d -p 27017:27017 -v dirLocal:/data/db mongo:latest
 ```
 
 ### Correr la aplicacion
+
+Instalar las dependencias
+```
+    npm install 
+```
+
 Para correr la aplicacion en forma local
 ```
 npm run dev
