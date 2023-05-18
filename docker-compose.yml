@@ -1,0 +1,10 @@
+version: '3.0'
+
+services:
+  app:
+    build: .
+    ports:
+      - '5001:3001'
+    environment:
+      - PORT:3001
+      - MONGO_URL:mongodb://localhost:27017/alumnos

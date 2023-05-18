@@ -1,6 +1,7 @@
 const alumnosService  = require('../services/alumnos.service')
 
 const getAlumnos = async(req, res) =>{  
+    console.log('Pasando por el controlador de getAlumnos()')
     try {
         res.status(200).json(await alumnosService.findAll())
     } catch (err) {
@@ -9,6 +10,7 @@ const getAlumnos = async(req, res) =>{
 }
 
 const saveAlumno = async (req, res) => {
+    
     try {
         res.status(201).json(await alumnosService.save(req.body))
     } catch (err) {

@@ -7,4 +7,11 @@ const alumnoSchema = mongoose.Schema({
     libreta: {type: Boolean, default: false}
 },{collection: "alum"})
 
+alumnoSchema.set('toJSON', {
+    transform: ( _ , att)=> {
+        delete att._id;
+        delete att.__v;  
+    }
+})
+
 module.exports = mongoose.model('Alumno', alumnoSchema)
