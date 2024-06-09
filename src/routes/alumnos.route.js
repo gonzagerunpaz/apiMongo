@@ -7,4 +7,4 @@ router.get('/:dni', alumnoController.getAlumnoByDniController)
 router.post('/',alumnoController.saveAlumnoController)
 router.delete('/:dni', alumnoController.deleteAlumnoByDniController)
 
-module.exports = { alumnosRouter: router }
+module.exports = router 

@@ -1,10 +1,13 @@
 ## Esta es una API que se conecta con Mongo DB
 
 ### Configurar un mongo local
-Para configurar un mongo local con docker pude correr el siguiente comando
-```
-docker run -d -p 27017:27017 -v dirLocal:/data/db mongo:latest
-```
+- Pre Requisito tener Docker instalado.
+Para levantar el servidor de mongo con un cliente para consultar cosas rapidas esta disponible en la carpata ./mongo de este proyecto un archivo docker-compose.yml que levanta los contenedores de mongo y mongo-express de forma simple, solo deben correr el comando
+````
+docker-compose -up -d
+```` 
+Si desean ingrear al motor mongo a través del cliente mongo-express ingrerar a http://localhost:8081
+
 
 ### Correr la aplicacion
 

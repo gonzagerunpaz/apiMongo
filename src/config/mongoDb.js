@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
-const MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost:27017/alumnos'
+const MONGO_URL = process.env.MONGO_URL || 'mongodb://root:example@localhost:27017/alumnos?authSource=admin'
 
 mongoose.connect(MONGO_URL, {
     useNewUrlParser: true,
