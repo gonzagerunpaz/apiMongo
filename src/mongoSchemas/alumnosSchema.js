@@ -9,7 +9,7 @@ const alumnoSchema = mongoose.Schema({
     nombre: {type: String, required: true},
     dni: { type: Number, required: true},
     libreta: {type: Boolean, default: false},
-    mails: [ mail  ],
+    mails: [ mail ],
 },{collection: "alum"})
 
 
